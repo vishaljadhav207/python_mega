@@ -2,9 +2,9 @@
 while True:
     user_action = input("type add,show,edit,complete todo or exit:  ")
     user_action=user_action.strip()
-    match user_action:
-        case "add":
-            todo=input("enter a todo: ")+"\n"
+
+    if "add" in user_action:
+            todo=user_action[4:]
 
             # file=open('todos.txt','r')
             # todos=file.readlines()
@@ -14,10 +14,10 @@ while True:
                 todos = file.readlines()
 
             todos.append(todo)
-
             with open("todos.txt", "w") as file:
                 todos=file.writelines(todos)
-        case "show":
+
+    elif "show" in user_action:
             with open("todos.txt", "r") as file:
                 todos = file.readlines()
 
@@ -28,9 +28,12 @@ while True:
                 item=item.strip("\n")
                 item=item.title()
                 print(f"{index+1}.{item}")
-        case "edit":
-            number=int(input("number of todo to edit: "))
-            number=number-1
+    elif "edit" in user_action:
+
+            number=int(user_action[5:])
+            print(number)
+            number = number - 1
+
 
             with open("todos.txt", "r") as file:
                 todos = file.readlines()
@@ -42,8 +45,8 @@ while True:
                 todos=file.writelines(todos)
 
 
-        case "complete":
-            number=int(input("number of the todo to complete"))
+    elif "complete" in user_action:
+            number=int(user_action[9:])
 
             with open("todos.txt", "r") as file:
                 todos=file.readlines()
@@ -57,9 +60,9 @@ while True:
 
             message=f"Todo {todo_to_remove} was remove from the list"
             print(message)
-        case "exit":
+    elif "exit" in user_action:
             break
-        case whatever: #use any var name for default case
-            print("hey you enter unknown case")
+    else:
+        print("command is not valid")
 
 print("Bye")
