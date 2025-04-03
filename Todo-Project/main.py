@@ -10,15 +10,15 @@ while True:
             # todos=file.readlines()
             # file.close()
 
-            with open("todos.txt","r") as file: #same as above dont need to add file.close()
+            with open("todos.txt", "r") as file: #same as above dont need to add file.close()
                 todos = file.readlines()
 
             todos.append(todo)
 
-            with open("todos.txt","w") as file:
+            with open("todos.txt", "w") as file:
                 todos=file.writelines(todos)
         case "show":
-            with open("todos.txt","r") as file:
+            with open("todos.txt", "r") as file:
                 todos = file.readlines()
 
 
@@ -32,27 +32,27 @@ while True:
             number=int(input("number of todo to edit: "))
             number=number-1
 
-            with open("todos.txt","r") as file:
+            with open("todos.txt", "r") as file:
                 todos = file.readlines()
 
             new_todo=input("enter new todo: ")
             todos[number]=new_todo+"\n"
 
-            with open("todos.txt","w") as file:
+            with open("todos.txt", "w") as file:
                 todos=file.writelines(todos)
 
 
         case "complete":
             number=int(input("number of the todo to complete"))
 
-            with open("todos.txt","r") as file:
+            with open("todos.txt", "r") as file:
                 todos=file.readlines()
 
             index=number-1
             todo_to_remove=todos[index]
             todos.pop(index)
 
-            with open("todos.txt","w") as file:
+            with open("todos.txt", "w") as file:
                 file.writelines(todos)
 
             message=f"Todo {todo_to_remove} was remove from the list"
