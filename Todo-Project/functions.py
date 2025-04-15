@@ -4,6 +4,5 @@ def get_todos(filepath="todos.txt"):
     return todos_local
 
 def write_todos(todos_ars,filepath="todos.txt"):
-    """ WRITE THE TODO ITEM IN TEXT FILE"""
     with open(filepath,"w")as file:
         file.writelines(todos_ars)

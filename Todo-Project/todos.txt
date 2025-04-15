@@ -1,6 +1,5 @@
-clean
 clear
 shape
-buycamera
-Hello Vishal
-hello user
+hello sirhello user
+hey
+hey
