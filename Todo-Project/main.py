@@ -54,7 +54,7 @@ while True:
             number=int(user_action[9:])
 
 
-            todos=get_todos("todos.txt") #same as above
+            todos=get_todos("../../webapp1/todos.txt") #same as above
             index=number-1
             todo_to_remove=todos[index]
             todos.pop(index)

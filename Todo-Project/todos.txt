@@ -1,5 +1,0 @@
-clear
-shape
-hello sirhello user
-hey
-hey
